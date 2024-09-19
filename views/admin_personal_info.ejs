@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Information</title>
+    <link rel="stylesheet" href="personal-info.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+    <div class="top">
+        <div class="top-left">
+            <div class="py-logo2">
+                <img src="Images/pyLogo2.png" alt="PY Logo" height="75px" />
+            </div>
+            <div class="dashboard-text">
+                <h1>Personal Information</h1>
+            </div>
+        </div>
+        <div class="profile">
+            <img src="Images/profile.png" alt="Profile" height="75px" />
+            <p><%= admin.user_first_name %> <%= admin.user_last_name %></p> <!-- Display user's full name -->
+            <i class="fa-solid fa-caret-down"></i>
+        </div>
+    </div>
+
+    <div class="container2">
+        <div class="left">
+            <ul>
+                <a href="personal-info.ejs">
+                    <div class="personal-info">
+                        <i class="fa-solid fa-user"></i>
+                        <li>Personal Info</li>
+                    </div>
+                </a>
+                <a href="transaction.html">
+                    <div class="transactions">
+                        <i class="fa-solid fa-newspaper"></i>
+                        <li>Transactions</li>
+                    </div>
+                </a>
+                <a href="contacts(skilled-worker).html">
+                    <div class="contacts">
+                        <i class="fa-solid fa-phone"></i>
+                        <li>Contacts</li>
+                    </div>
+                </a>
+            </ul>
+        </div>
+        <div class="mid-right-container">
+            <div class="mid">
+                <div class="profile-info">
+                    <img src="Images/personal-profile.png" width="75px" height="75px" />
+                    <h1 id="user_name"><%= admin.admin_firstname + admin.admin_lastname %></h1> <!-- Retrieved from database -->
+                </div>
+                <div class="user-contact-container">
+                    <div class="information">
+                        <!-- User Information Table -->
+                        <div class="user-information">
+                            <h3>User Information</h3>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>First Name:</strong></td>
+                                        <td id="first-name"><%= admin.admin_firstname %></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Middle Name:</strong></td>
+                                        <td id="middle-name"><%= admin.admin_middlename || '-' %></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Last Name:</strong></td>
+                                        <td id="last-name"><%= admin.admin_lastname %></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Suffix:</strong></td>
+                                        <td id="suffix"><%= admin.admin_suffix || '-' %></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Gender:</strong></td>
+                                        <td id="gender"><%= admin.admin_gender %></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Civil Status:</strong></td>
+                                        <td id="civil-status"><%= admin.admin_civilstatus %>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Birth Date:</strong></td>
+                                       <!--<td id="birth-date"><%= //user.user_birthdate %></td>--> 
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Birth Place:</strong></td>
+                                        <td id="birth-place"><%= admin.admin_birthplace %></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Citizenship:</strong></td>
+                                        <td id="citizenship"><%= admin.admin_citizenship %></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <!-- Contact Information Table -->
+                        <div class="contact-information">
+                            <h3>Contact Information</h3>
+                            <table>
+                                <tbody>
+                                    <tr>
+                                        <td><strong>Address:</strong></td>
+                                        <td id="address"><%= admin.admin_address %></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Mobile:</strong></td>
+                                        <td id="mobile"><%= admin.admin_mobile%></td>
+                                    </tr>
+                                    <tr>
+                                        <td><strong>Email:</strong></td>
+                                        <td id="email"><%= admin.admin_useremail %></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="buttons">
+                        <form action="/admin_approve_request" method="get">
+                            <input type="submit" value="Requests">
+                        </form>
+                        <a href="health-center.html">
+                            <button>Health Center</button>
+                        </a>
+                        <a href="edit-personal-info.html">
+                            <button class="edit-info">Edit Information</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

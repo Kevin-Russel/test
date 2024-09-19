@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Transaction</title>
+    <link rel="stylesheet" href="../designs/transaction.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+  </head>
+  <body>
+    <div class="top">
+      <div class="top-left">
+        <div class="py-logo2">
+          <img src="Images/pyLogo2.png" alt="PY Logo" height="75px" />
+        </div>
+        <div class="dashboard-text">
+          <h1>Transaction</h1>
+        </div>
+      </div>
+      <div class="profile">
+        <img src="Images/profile.png" alt="Profile" height="75px" />
+        <p><%= user.reg_firstname + ' ' + user.reg_middlename + ' ' + user.reg_lastname %></p>
+        <i class="fa-solid fa-caret-down"></i>
+      </div>
+    </div>
+
+    <div class="container2">
+      <div class="left">
+        <ul>
+          <form action="/personal-info" method="GET">
+            <input type="button" value="Personal Info">
+          </form>
+          <!-- <a href="personal-info.html">
+            <div class="personal-info">
+              <i class="fa-solid fa-user"></i>
+              <li>Personal Info</li>
+            </div>
+
+             <a href="transaction.html">
+            <div class="transactions">
+              <i class="fa-solid fa-newspaper"></i>
+              <li>Transactions</li>
+            </div>
+
+            <a href="contacts(skilled-worker).html">
+            <div class="contacts">
+              <i class="fa-solid fa-phone"></i>
+              <li>Contacts</li>
+          </a>
+
+          </a>-->
+
+          <form action="/transaction" method="GET">
+            <input type="button" value="Transactions">
+          </form>
+         
+          <form action="/contacts" method="GET">
+            <input type="button" value="Contacts">
+          </form>
+            </div>
+          </a>
+        </ul>
+      </div>
+
+      <div class="main-container">
+        <div class="sub-container">
+          <h1>Reserved Court</h1>
+          <div class="carpenters">
+            <table>
+              <tr class="carpenters-info">
+                <th>Equipment Name</th> <!-- Changed from Court ID to Equipment Name -->
+                <th>Status</th>
+                <th>Reservation Date</th>
+                <th>Starting Date</th>
+                <th>End Date</th>
+              </tr>
+
+          
+              <% if (reservations && reservations.length > 0) { %>
+                <% reservations.forEach(function(reservation) { %>
+                  <tr>
+                    <td><%= reservation.equipment_name %></td> <!-- Equipment Name -->
+                    <td><%= reservation.reservation_status %></td> <!-- Status -->
+                    <td><%= new Date(reservation.reservation_createdat).toLocaleString('en-PH', { timeZone: 'Asia/Manila' }) %></td> <!-- Reservation Date -->
+                    <td><%= new Date(reservation.reservation_start).toLocaleString('en-PH', { timeZone: 'Asia/Manila' }) %></td> <!-- Starting Date -->
+                    <td><%= new Date(reservation.reservation_end).toLocaleString('en-PH', { timeZone: 'Asia/Manila' }) %></td> <!-- End Date -->
+                  </tr>
+                <% }); %>
+              <% } else { %>
+                <tr>
+                  <td colspan="5">No reservations found</td>
+                </tr>
+              <% } %>
+
+            </table>
+          </div>
+        </div>
+      </div>
+      
+  </body>
+</html>

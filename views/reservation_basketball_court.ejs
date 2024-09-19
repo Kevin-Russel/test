@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reserve</title>
+    <link rel="stylesheet" href="reservation(basketball-court).css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    />
+  </head>
+  <body>
+
+    
+    <div class="top">
+      <div class="top-left">
+        <div class="py-logo2">
+          <img src="Images/pyLogo2.png" alt="PY Logo" height="75px" />
+        </div>
+        <div class="dashboard-text">
+          <h1>Reservation</h1>
+        </div>
+      </div>
+      <div class="profile">
+        <img src="Images/profile.png" alt="Profile" height="75px" />
+        <p><%= user.reg_firstname + ' ' + user.reg_middlename + ' ' + user.reg_lastname %></p>
+        <i class="fa-solid fa-caret-down"></i>
+      </div>
+    </div>
+
+    <div class="monoblock-container">
+      <div class="monoblock-chair">
+        <div class="monoblock-text">
+          <div class="monoblock-header">
+            <div class="h1p-group">
+              <a href="reservation.html">
+                <img src="Images/back-button.png" width="25px" height="25px">
+              </a>
+              <h1>Basketball Court</h1>
+            </div>
+          </div>
+          <form action="/reservation_basketball_court" method="POST" >
+            <div class="monoblock-input">
+                <div class="s-d-t">
+                    <label for="">Starting Date and Time</label>
+                    <input type="datetime-local" name="reservation_start" required>
+                </div>
+                <div class="e-d-t">
+                    <label for="">End Date and Time</label>
+                    <input type="datetime-local" name="reservation_end" required>
+                </div>
+                <div class="purpose">
+                    <label for="">Purpose</label>
+                    <div>
+                        <input type="text" placeholder="please state your purpose" name="reservation_purpose" required>
+                    </div>
+                </div>
+            </div>
+            <div class="submit-reset">
+                <input type="submit" value="1001" placeholder="Submit">
+            </div>
+        </form>
+        
+          
+        </div>   
+      </div>
+    </div>
+
+
+  </body>
+</html>

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="sign-up.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="sign-up-container">
+        <div class="sign-up-subcontainer">
+            <h1>Sign Up</h1>
+            <form action="/sign-up" method="POST">
+                <input type="text" name="reg_firstname" placeholder="First Name" required>
+                <input type="text" name="reg_middlename" placeholder="Middle Name">
+                <input type="text" name="reg_lastname" placeholder="Last Name" required>
+                <input type="email" name="reg_useremail" placeholder="Email" required>
+                <input type="password" name="reg_userpassword" placeholder="Password" required>
+            <!--<input type="password" name="confirm_password" placeholder="Confirm Password" requ  ired>-->    
+            <input type="text" name="reg_validid_num" placeholder="register">
+                
+
+                <div>
+                    <!--  <select name="reg_idtype" required >
+                        <option value="">-SELECT-</option>
+                        <option value="school id">ID 1</option>
+                        <option value="drivers licence">ID 2</option>
+                        <option value="philhealth id">ID 3</option>
+                        <option value="ssss id">ID 4</option>
+                        <option value="baranggay id">ID 5</option>
+                      </select>   aayusikn pa to -->
+
+                      <div class="photo">
+                        <input type="file" id="fileInput" accept="image/*" style="display: none;" />
+                        <label for="fileInput" class="upload-button">
+                            Upload ID Photo
+                        </label>
+                    </div>
+                    <input type="text" name="reg_user_citizenship" placeholder="citizenship" required>
+                    <input type="text" name="reg_mobile_number" placeholder="mobilenumber" required >
+                    <input type="text" name="reg_birthplace" id="" placeholder="birthdpalce" required>
+                    <input type="text" name="reg_address" placeholder="address" required>
+                    
+                </div>
+           
+                    <input type="text" name="reg_validid_num" id="" placeholder="Registration ID">
+                
+                    <div class="birthday">
+                        <label for="reg_bmonth">Birthday</label>
+                        <div class="m-d-y">
+                            <select name="reg_bmonth" required>
+                                <option value="">Month</option>
+                                <option value="01">January</option>
+                                <option value="02">February</option>
+                                <option value="03">March</option>
+                                <option value="04">April</option>
+                                <option value="05">May</option>
+                                <option value="06">June</option>
+                                <option value="07">July</option>
+                                <option value="08">August</option>
+                                <option value="09">September</option>
+                                <option value="10">October</option>
+                                <option value="11">November</option>
+                                <option value="12">December</option>
+                            </select>
+                            <select name="reg_birthday" required>
+                                <option value="">Day</option>
+                                <% for (let i = 1; i <= 31; i++) { %>
+                                    <option value="<%= i %>"><%= i %></option>
+                                <% } %>
+                            </select>
+                            <select name="reg_byear" required>
+                                <option value="">Year</option>
+                                <% for (let i = new Date().getFullYear(); i >= 1900; i--) { %>
+                                    <option value="<%= i %>"><%= i %></option>
+                                <% } %>
+                            </select>
+                        </div>
+                    </div>
+                
+                    <div class="gender">
+                        <label>Gender</label>
+                        <div>
+                            <input type="radio" name="gender" value="Male" id="male" required>
+                            <label for="male">Male</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="gender" value="Female" id="female" required>
+                            <label for="female">Female</label>
+                        </div>
+                    </div>
+                
+                    <div class="skilled-worker">
+                        <label>Are you a skilled worker?</label>
+                        <div>
+                            <input type="radio" name="user_is_skilledworker" value="yes" id="yes">
+                            <label for="yes">Yes</label>
+                        </div>
+                        <div>
+                            <input type="radio" name="user_is_skilledworker" value="no" id="no">
+                            <label for="no">No</label>
+                        </div>
+                    </div>
+                
+                    <button type="submit">Submit</button>
+                
+                </div>
+            </form>
+            <div class="cancel">
+                <form action="/" method="get"><button>Cancel</button></form>
+                
+            </div>
+        </div>
+    </div>
+</body>
+</html>
